@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <node resource-id="com.netflix.mediaclient:id/2131427782" class="android.widget.Button" bounds="[36,398][338,979]" content-desc="Play Sample Film, Part II, 1 hour 5 minutes remaining">
+    <node resource-id="" class="android.view.ViewGroup" bounds="[36,398][338,979]">
+      <node resource-id="com.netflix.mediaclient:id/2131427783" class="android.widget.ImageView" bounds="[36,398][338,823]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427787" class="android.view.View" bounds="[54,841][320,853]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427784" class="android.view.View" bounds="[36,859][338,979]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427780" class="android.widget.ImageView" bounds="[51,859][171,979]" content-desc="Show details for Sample Film, Part II" />
+      <node resource-id="com.netflix.mediaclient:id/2131427786" class="android.view.View" bounds="[186,883][189,955]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427785" class="android.widget.ImageView" bounds="[203,859][323,979]" />
+    </node>
+  </node>
+  <node resource-id="com.netflix.mediaclient:id/2131427782" class="android.widget.Button" bounds="[356,398][658,979]" content-desc="Play Sample Drama, 12 minutes remaining">
+    <node resource-id="" class="android.view.ViewGroup" bounds="[356,398][658,979]">
+      <node resource-id="com.netflix.mediaclient:id/2131427783" class="android.widget.ImageView" bounds="[356,398][658,823]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427787" class="android.view.View" bounds="[374,841][640,853]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427784" class="android.view.View" bounds="[356,859][658,979]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427780" class="android.widget.ImageView" bounds="[371,859][491,979]" content-desc="Show details for Sample Drama" />
+      <node resource-id="com.netflix.mediaclient:id/2131427786" class="android.view.View" bounds="[506,883][509,955]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427785" class="android.widget.ImageView" bounds="[523,859][643,979]" />
+    </node>
+  </node>
+  <node resource-id="com.netflix.mediaclient:id/2131427782" class="android.widget.Button" bounds="[676,398][978,979]" content-desc="Play Sample Travel: World Tour">
+    <node resource-id="" class="android.view.ViewGroup" bounds="[676,398][978,979]">
+      <node resource-id="com.netflix.mediaclient:id/2131427783" class="android.widget.ImageView" bounds="[676,398][978,823]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427787" class="android.view.View" bounds="[694,841][960,853]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427784" class="android.view.View" bounds="[676,859][978,979]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427780" class="android.widget.ImageView" bounds="[691,859][811,979]" content-desc="Show details for Sample Travel: World Tour" />
+      <node resource-id="com.netflix.mediaclient:id/2131427786" class="android.view.View" bounds="[826,883][829,955]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427785" class="android.widget.ImageView" bounds="[843,859][963,979]" />
+    </node>
+  </node>
+  <node resource-id="com.netflix.mediaclient:id/2131427782" class="android.widget.Button" bounds="[996,398][1080,979]" content-desc="Play Sample Thriller, 1 hour 5 minutes remaining">
+    <node resource-id="" class="android.view.ViewGroup" bounds="[996,398][1080,979]">
+      <node resource-id="com.netflix.mediaclient:id/2131427783" class="android.widget.ImageView" bounds="[996,398][1080,823]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427787" class="android.view.View" bounds="[1014,841][1080,853]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427784" class="android.view.View" bounds="[996,859][1080,979]" />
+      <node resource-id="com.netflix.mediaclient:id/2131427780" class="android.widget.ImageView" bounds="[1011,859][1080,979]" content-desc="Show details for Sample Thriller" />
+    </node>
+  </node>
+</hierarchy>

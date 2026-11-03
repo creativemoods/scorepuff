@@ -1,0 +1,38 @@
+<hierarchy>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000001" bounds="[36,1120][338,1543]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 01" bounds="[36,1120][338,1543]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000002" bounds="[356,1120][658,1543]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 02" bounds="[356,1120][658,1543]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000003" bounds="[676,1120][978,1543]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 03" bounds="[676,1120][978,1543]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000004" bounds="[996,1120][1080,1543]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 04" bounds="[996,1120][1080,1543]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000005" bounds="[36,1684][338,2107]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 05" bounds="[36,1684][338,2107]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000006" bounds="[356,1684][658,2107]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 06" bounds="[356,1684][658,2107]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000007" bounds="[676,1684][978,2107]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 07" bounds="[676,1684][978,2107]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000008" bounds="[996,1684][1080,2107]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 08" bounds="[996,1684][1080,2107]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000009" bounds="[36,2248][338,2340]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 09" bounds="[36,2248][338,2340]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000010" bounds="[356,2248][658,2340]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 10" bounds="[356,2248][658,2340]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000011" bounds="[676,2248][978,2340]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 11" bounds="[676,2248][978,2340]" />
+  </node>
+  <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000012" bounds="[996,2248][1080,2340]">
+    <node resource-id="BackgroundImage" content-desc="Sample title 12" bounds="[996,2248][1080,2340]" />
+  </node>
+</hierarchy>

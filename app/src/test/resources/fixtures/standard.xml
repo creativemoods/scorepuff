@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hierarchy>
+    <node resource-id="lolomo_scrollable_column" bounds="[0,0][1080,2340]">
+        <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:82078375" bounds="[356,1120][658,1543]">
+            <node resource-id="BackgroundImage" content-desc="Collision Course" bounds="[356,1120][658,1543]" />
+        </node>
+        <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:80994082" bounds="[36,1684][338,2107]">
+            <node resource-id="BackgroundImage" content-desc="Lupin" bounds="[36,1684][338,2107]" />
+        </node>
+    </node>
+</hierarchy>

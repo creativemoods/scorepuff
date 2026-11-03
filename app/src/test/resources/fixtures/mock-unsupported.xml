@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Synthetic unsupported layout: labels alone must not create ratings.-->
+  <node class="android.widget.ImageView" content-desc="Unknown title" bounds="[36,160][338,585]" />
+  <node class="android.widget.TextView" text="2025" bounds="[36,600][126,650]" />
+</hierarchy>

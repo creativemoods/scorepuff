@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Synthetic series details using the verified movie-header structure.-->
+  <node class="androidx.recyclerview.widget.RecyclerView" bounds="[0,0][1080,2340]">
+    <node class="android.widget.FrameLayout" content-desc="Show controls" bounds="[0,259][1080,866]" />
+    <node class="android.widget.TextView" text="Example Series" content-desc="Example Series" bounds="[0,866][600,997]" />
+    <node bounds="[30,997][600,1057]">
+      <node class="android.widget.TextView" text="2020" bounds="[30,1003][126,1052]" />
+      <node class="android.widget.TextView" text="3 Seasons" bounds="[294,1003][500,1052]" />
+    </node>
+    <node class="android.widget.Button" content-desc="Play Example Series" bounds="[30,1198][1050,1342]" />
+    <node class="android.view.ViewGroup" bounds="[30,1500][1050,1700]">
+      <node class="android.widget.TextView" text="Episode One" content-desc="Episode One" bounds="[350,1500][900,1560]" />
+      <node class="android.widget.TextView" text="2025" bounds="[350,1565][450,1610]" />
+    </node>
+  </node>
+</hierarchy>

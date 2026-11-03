@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Copyright 2026 Creative Moods, Lda.
+     SPDX-License-Identifier: Apache-2.0 -->
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScorePuff · local design preview</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#20222a;color:#fafafa;font:15px system-ui,sans-serif;display:flex;gap:40px;justify-content:center;align-items:start;padding:32px}aside{max-width:330px}h1{font-size:25px;margin-top:0}p{color:#bdc1ce;line-height:1.6}label{display:block;margin:22px 0}button,select{background:#303440;border:1px solid #626879;border-radius:8px;color:white;padding:10px;font:inherit;cursor:pointer}button[aria-pressed=true]{background:#fafafa;color:#101218}input{accent-color:#fafafa;width:100%}.phone{width:384px;border:12px solid #07080b;border-radius:38px;overflow:hidden;box-shadow:0 20px 70px #0008;flex-shrink:0}.status{background:#101218;padding:10px 18px;font-size:12px;display:flex;justify-content:space-between}.screen{background:#101218;height:720px;overflow:auto;scrollbar-width:none;position:relative}.header{padding:18px 12px 10px;position:sticky;top:0;z-index:3;background:#101218}.brand{color:#ff5965;font-weight:800;letter-spacing:2px;font-size:13px}.sub{font-size:11px;color:#a8aebc;margin-top:6px}.row-title{font-size:17px;font-weight:650;margin:22px 12px 10px}.row{display:flex;gap:7px;padding:0 12px 8px;overflow-x:auto;scrollbar-width:none}.card{position:relative;width:100px;height:141px;flex:0 0 100px;overflow:hidden;border-radius:4px;background:var(--art);isolation:isolate}.card:before{content:'';position:absolute;inset:0;background:linear-gradient(140deg,#fff2,transparent 50%,#0006);z-index:-1}.art-title{position:absolute;bottom:14px;left:8px;right:8px;font-size:14px;font-weight:800;text-transform:uppercase;text-shadow:0 1px 8px #000}.badge{position:absolute;right:3px;top:3px;width:32px;height:20px;display:grid;place-items:center;border-radius:4px;background:rgba(16,18,24,.96);color:white;font-size:12px;font-weight:700;font-family:Arial,sans-serif;line-height:1;font-variant-numeric:tabular-nums}.scenario{color:#a8aebc;font-size:11px;width:100px;line-height:1.6;margin-top:6px}.slot{flex:0 0 100px}.details .hero{height:190px;background:linear-gradient(130deg,#394966,#101218);display:grid;place-items:center;font-size:15px;color:#b7c3dc}.details .body{padding:16px 12px}.heading{display:flex;align-items:center;gap:12px}.heading h2{margin:0;font-size:25px}.heading .badge{position:static;flex-shrink:0}.metadata{font-size:13px;color:#b7bdca;margin:12px 0}.play{width:100%;background:#fafafa;color:#111;margin:12px 0}.description{font-size:14px;line-height:1.6;color:#ccc}.footnote{font-size:11px;padding:18px 12px;color:#b7bdca}.homebar{height:18px;background:#101218;display:grid;place-items:center}.homebar:before{content:'';width:110px;height:4px;border-radius:3px;background:#ddd}@media(max-width:800px){body{flex-direction:column;align-items:center;padding:20px 10px}aside{max-width:384px}.phone{max-width:100%}}
+.grid.row{display:grid;grid-template-columns:repeat(3,100px);gap:16px 7px}.wide .slot,.wide .card{width:160px;flex-basis:160px}.wide .card{height:90px}.rank .slot{position:relative;padding-left:18px;flex-basis:118px}.rank .slot:before{content:attr(data-rank);position:absolute;left:0;top:90px;font-size:32px;font-weight:900;color:#ddd}.continue .card:after{content:'';position:absolute;bottom:4px;left:6px;right:6px;height:3px;background:linear-gradient(to right,#e54550 65%,#ffffff55 65%)}
+</style>
+<aside>
+<h1>ScorePuff playground</h1>
+<p><a href="https://scorepuff.creativemoods.pt" style="color:inherit">scorepuff.creativemoods.pt</a></p>
+<p>Local visual mock. All ratings and artwork here are sample data. The Android debug playground uses the real parser and Canvas renderer.</p>
+<div><button id="list" aria-pressed="true">List</button> <button id="details" aria-pressed="false">Details</button></div>
+<label>Screen <select id="screenmode"><option value="list">Home / carousels</option><option value="continue">Continue Watching</option><option value="grid">Search / My List grid (mock)</option><option value="rank">Top 10 (mock)</option><option value="wide">Wide cards (mock)</option><option value="details">Movie details</option><option value="series">Series details (mock)</option><option value="unsupported">Unsupported layout (mock)</option></select></label>
+<label>RT availability <select id="rt"><option value="available">Use sample RT scores</option><option value="missing">All RT scores missing</option></select></label>
+<label>Phone zoom <input id="zoom" type="range" min="75" max="150" value="100"></label>
+<p><strong>32 × 20 dp</strong> badge, 3 dp inset. One decimal, white on charcoal. Scroll the rows to check clipping.</p>
+<p>Average = mean of available IMDb and RT÷10 scores. Missing values are excluded; zero counts. Nothing is sent to OMDb.</p>
+</aside>
+<div id="phone" class="phone"><div class="status"><span>9:41</span><span>● ▰</span></div><main id="screen" class="screen"></main><div class="homebar"></div></div>
+<script>
+const examples=[
+ {title:'Nightfall',imdb:7.4,rt:93,art:'#485e7a',note:'Both sources'},
+ {title:'The Crossing',imdb:7.4,rt:null,art:'#795548',note:'IMDb only'},
+ {title:'Blue Hour',imdb:null,rt:80,art:'#294e6e',note:'RT only'},
+ {title:'Unknown',imdb:null,rt:null,art:'#52535f',note:'Neither source'},
+ {title:'Zero Point',imdb:0,rt:0,art:'#6e3f4d',note:'Actual zero'},
+ {title:'Perfect Ten',imdb:10,rt:100,art:'#606b44',note:'Maximum score'}
+];
+let mode='list';
+function score(item){const values=[item.imdb,document.querySelector('#rt').value==='missing'||item.rt===null?null:item.rt/10].filter(v=>v!==null);return values.length?(values.reduce((a,b)=>a+b,0)/values.length).toFixed(1):null}
+function badge(item){const value=score(item);return value===null?'':`<span class="badge" aria-label="Average ${value} out of ten">${value}</span>`}
+function row(title,items){return `<div class="row-title">${title}</div><div class="row">${items.map((item,index)=>`<div class="slot" data-rank="${index+1}"><div class="card" style="--art:${item.art}">${badge(item)}<div class="art-title">${item.title}</div></div><div class="scenario">${item.note}</div></div>`).join('')}</div>`}
+function render(){
+ const screen=document.querySelector('#screen');
+ screen.className='screen '+(['details','series'].includes(mode)?'details':mode);
+ const header='<div class="header"><div class="brand">MOCK CATALOG</div><div class="sub">Sample artwork · offline visual preview</div></div>';
+ if(['details','series'].includes(mode)){
+  const series=mode==='series';
+  screen.innerHTML=`<div class="hero">Mock trailer area</div><div class="body"><div class="heading"><h2>${series?'Example Series':'Nightfall'}</h2>${badge(examples[0])}</div><div class="metadata">${series?'2020 · 16+ · 3 Seasons':'2025 · 16+ · 2h 8m'} · HD</div><button class="play">▶ Play</button><div class="description">A sample details page for checking the compact score beside the title without covering metadata or controls.</div></div>`;
+ }else if(mode==='unsupported'){
+  screen.innerHTML=header+'<div class="footnote">No recognized cards — no badges. Labels and years alone do not establish a match.</div>';
+ }else if(mode==='list'){
+  screen.innerHTML=header+row('Your next watch',examples)+row('More to explore',[...examples].reverse());
+ }else{
+  const title={continue:'Continue watching',grid:'Search / My List',rank:'Top 10',wide:'Wide cards'}[mode];
+  screen.innerHTML=header+row(title,examples);
+ }
+ for(const name of ['list','details'])document.getElementById(name).setAttribute('aria-pressed',String(mode===name));
+ document.querySelector('#screenmode').value=mode;
+}
+for(const name of ['list','details'])document.getElementById(name).onclick=()=>{mode=name;render()};document.querySelector('#screenmode').onchange=e=>{mode=e.target.value;render()};document.querySelector('#rt').onchange=render;document.querySelector('#zoom').oninput=e=>{document.querySelector('#phone').style.zoom=e.target.value/100};render();
+</script>
+</html>

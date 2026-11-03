@@ -1,0 +1,162 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "7766918919933769030121cdb17fe164",
+    "entities": [
+      {
+        "tableName": "title_mappings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`lookupKey` TEXT NOT NULL, `netflixId` TEXT, `netflixTitle` TEXT NOT NULL, `contentType` TEXT, `imdbId` TEXT, `canonicalTitle` TEXT, `releaseYear` TEXT, `resolvedType` TEXT, `status` TEXT NOT NULL, `matchConfidence` TEXT, `lastVerifiedAt` INTEGER, `lastAttemptAt` INTEGER NOT NULL, `retryAfter` INTEGER NOT NULL, `failures` INTEGER NOT NULL, `netflixReleaseYear` INTEGER, `netflixRuntimeMinutes` INTEGER, PRIMARY KEY(`lookupKey`))",
+        "fields": [
+          {
+            "fieldPath": "lookupKey",
+            "columnName": "lookupKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netflixId",
+            "columnName": "netflixId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "netflixTitle",
+            "columnName": "netflixTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imdbId",
+            "columnName": "imdbId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "canonicalTitle",
+            "columnName": "canonicalTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "releaseYear",
+            "columnName": "releaseYear",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "resolvedType",
+            "columnName": "resolvedType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "matchConfidence",
+            "columnName": "matchConfidence",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastVerifiedAt",
+            "columnName": "lastVerifiedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastAttemptAt",
+            "columnName": "lastAttemptAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "retryAfter",
+            "columnName": "retryAfter",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "failures",
+            "columnName": "failures",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netflixReleaseYear",
+            "columnName": "netflixReleaseYear",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "netflixRuntimeMinutes",
+            "columnName": "netflixRuntimeMinutes",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "lookupKey"
+          ]
+        }
+      },
+      {
+        "tableName": "ratings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`imdbId` TEXT NOT NULL, `imdb` REAL, `rottenTomatoes` INTEGER, `lastSuccessAt` INTEGER, `lastAttemptAt` INTEGER NOT NULL, `retryAfter` INTEGER NOT NULL, `failures` INTEGER NOT NULL, PRIMARY KEY(`imdbId`))",
+        "fields": [
+          {
+            "fieldPath": "imdbId",
+            "columnName": "imdbId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imdb",
+            "columnName": "imdb",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "rottenTomatoes",
+            "columnName": "rottenTomatoes",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastSuccessAt",
+            "columnName": "lastSuccessAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastAttemptAt",
+            "columnName": "lastAttemptAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "retryAfter",
+            "columnName": "retryAfter",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "failures",
+            "columnName": "failures",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "imdbId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7766918919933769030121cdb17fe164')"
+    ]
+  }
+}

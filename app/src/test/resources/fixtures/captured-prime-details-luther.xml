@@ -1,0 +1,156 @@
+<hierarchy rotation="0">
+  <node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+    <node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+      <node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+        <node text="" resource-id="com.amazon.avod.thirdpartyclient:id/action_bar_root" class="android.widget.FrameLayout" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+          <node text="" resource-id="android:id/content" class="android.widget.FrameLayout" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+            <node text="" resource-id="" class="androidx.compose.ui.platform.ComposeView" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+                  <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,0][1080,2340]">
+                    <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,2340]">
+                      <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,2028]">
+                        <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,2028]">
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="true" bounds="[0,103][1080,2028]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,1521]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,843]">
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,711]" />
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,711]">
+                                  <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,711]">
+                                    <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,711]" />
+                                  </node>
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,584][1080,728]">
+                                  <node text="Luther" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[60,601][274,687]" />
+                                  <node text="" resource-id="" class="android.widget.ImageView" content-desc="Prime Video" clickable="false" scrollable="false" bounds="[939,639][1020,687]" />
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,705][807,849]">
+                                  <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,711][807,843]">
+                                    <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,711][807,762]">
+                                      <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[60,711][807,762]" />
+                                    </node>
+                                    <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,780][413,828]">
+                                      <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[114,783][413,826]" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[48,885][1032,1029]">
+                                <node text="Resume S1 E1" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[432,925][744,990]" />
+                                <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[48,885][1032,1029]" />
+                              </node>
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[48,1077][1032,1113]">
+                                <node text="" resource-id="" class="android.widget.ProgressBar" content-desc="" clickable="false" scrollable="false" bounds="[48,1089][882,1101]" />
+                                <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[906,1077][1032,1113]" />
+                              </node>
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[48,1137][1032,1281]">
+                                <node text="" resource-id="" class="android.view.View" content-desc="Download Episode 1" clickable="false" scrollable="false" bounds="[48,1137][1032,1281]" />
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[262,1173][334,1245]" />
+                                <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[358,1177][818,1242]" />
+                                <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[48,1137][1032,1281]" />
+                              </node>
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="true" bounds="[0,1329][1080,1521]">
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[48,1353][371,1497]">
+                                  <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[132,1397][347,1454]" />
+                                  <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[48,1365][371,1485]" />
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[395,1353][702,1497]">
+                                  <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[479,1397][678,1454]" />
+                                  <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[395,1365][702,1485]" />
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[726,1353][920,1497]">
+                                  <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[810,1397][896,1454]" />
+                                  <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[726,1365][920,1485]" />
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[944,1353][1080,1497]">
+                                  <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[1028,1397][1080,1454]" />
+                                  <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[944,1365][1080,1485]" />
+                                </node>
+                              </node>
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,1545][146,1599]">
+                              <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[60,1545][146,1599]" />
+                            </node>
+                            <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[170,1545][310,1602]" />
+                            <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[334,1545][540,1602]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[60,1626][1020,1803]">
+                              <node text="" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[60,1626][1020,1803]" />
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,1887][1080,2028]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,1887][1020,1890]" />
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[120,1920][960,2028]">
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[120,1920][266,2028]">
+                                  <node text="Releases" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[120,1920][266,1963]" />
+                                  <node text="2010" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[143,1972][244,2028]" />
+                                </node>
+                                <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[824,1920][960,2028]">
+                                  <node text="Seasons" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[824,1920][960,1963]" />
+                                  <node text="5" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" scrollable="false" bounds="[879,1972][905,2028]" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[468,31][612,115]">
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[468,31][612,115]" />
+                        </node>
+                      </node>
+                      <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,2028][1080,2196]">
+                        <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,2028][1020,2196]">
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[60,2028][252,2184]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="Home" clickable="false" scrollable="false" bounds="[60,2028][252,2184]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[120,2070][192,2142]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[84,2034][228,2178]" />
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[60,2028][252,2184]" />
+                          </node>
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[252,2028][444,2196]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="Prime" clickable="false" scrollable="false" bounds="[252,2028][444,2196]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[306,2070][390,2154]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[276,2040][420,2184]" />
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[252,2028][444,2196]" />
+                          </node>
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[444,2028][636,2184]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="My Stuff" clickable="false" scrollable="false" bounds="[444,2028][636,2184]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[504,2070][576,2142]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[444,2028][636,2184]" />
+                          </node>
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[636,2028][828,2184]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="Downloads" clickable="false" scrollable="false" bounds="[636,2028][828,2184]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[696,2070][768,2142]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[660,2034][804,2178]" />
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[636,2028][828,2184]" />
+                          </node>
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[828,2028][1020,2184]">
+                            <node text="" resource-id="" class="android.view.View" content-desc="Search" clickable="false" scrollable="false" bounds="[828,2028][1020,2184]" />
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[888,2070][960,2142]">
+                              <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[852,2034][996,2178]" />
+                            </node>
+                            <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[828,2028][1020,2184]" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,259]">
+                      <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,103][1080,259]">
+                        <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="true" scrollable="false" bounds="[24,109][168,253]" />
+                        <node text="" resource-id="" class="android.view.View" content-desc="" clickable="true" scrollable="false" bounds="[906,109][1050,253]">
+                          <node text="" resource-id="" class="android.view.View" content-desc="connect to cast device" clickable="false" scrollable="false" bounds="[924,127][1032,235]" />
+                          <node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[906,109][1050,253]" />
+                          <node text="" resource-id="" class="android.widget.Button" content-desc="" clickable="false" scrollable="false" bounds="[924,127][1032,235]" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node text="" resource-id="android:id/navigationBarBackground" class="android.view.View" content-desc="" clickable="false" scrollable="false" bounds="[0,2196][1080,2340]" />
+  </node>
+</hierarchy>

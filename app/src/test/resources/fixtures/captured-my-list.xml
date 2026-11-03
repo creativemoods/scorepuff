@@ -1,0 +1,124 @@
+<hierarchy>
+  <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+    <node resource-id="" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+      <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+        <node resource-id="com.netflix.mediaclient:id/2131427396" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+          <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+            <node resource-id="com.netflix.mediaclient:id/2131427742" class="android.view.ViewGroup" bounds="[0,0][1080,2340]">
+              <node resource-id="com.netflix.mediaclient:id/2131427869" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]" />
+              <node resource-id="com.netflix.mediaclient:id/2131429342" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                <node resource-id="com.netflix.mediaclient:id/2131428187" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+                  <node resource-id="com.netflix.mediaclient:id/2131428879" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]" />
+                </node>
+                <node resource-id="com.netflix.mediaclient:id/2131429175" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                  <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                    <node resource-id="com.netflix.mediaclient:id/2131429196" class="android.view.View" bounds="[0,0][1080,103]" />
+                    <node resource-id="com.netflix.mediaclient:id/2131427392" class="android.widget.LinearLayout" bounds="[0,103][1080,259]">
+                      <node resource-id="com.netflix.mediaclient:id/2131429331" class="android.view.ViewGroup" bounds="[0,103][1080,259]">
+                        <node resource-id="com.netflix.mediaclient:id/2131427390" class="android.view.ViewGroup" bounds="[0,103][1080,259]">
+                          <node resource-id="com.netflix.mediaclient:id/2131428548" class="android.widget.ImageButton" bounds="[12,115][180,247]" />
+                          <node resource-id="com.netflix.mediaclient:id/2131427661" class="android.widget.TextView" bounds="[204,115][936,247]" text="My List" />
+                          <node resource-id="" class="androidx.appcompat.widget.LinearLayoutCompat" bounds="[936,115][1080,247]">
+                            <node resource-id="com.netflix.mediaclient:id/2131428674" class="android.widget.Button" bounds="[936,115][1080,247]" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node resource-id="" class="android.widget.LinearLayout" bounds="[0,259][1080,2340]">
+                      <node resource-id="com.netflix.mediaclient:id/2131427891" class="android.view.View" bounds="[0,259][1080,262]" />
+                      <node resource-id="com.netflix.mediaclient:id/2131429249" class="android.widget.HorizontalScrollView" bounds="[0,262][1080,406]">
+                        <node resource-id="" class="android.widget.LinearLayout" bounds="[0,262][1080,406]">
+                          <node resource-id="com.netflix.mediaclient:id/2131428686" class="android.widget.LinearLayout" bounds="[0,262][580,406]">
+                            <node resource-id="" class="android.widget.TextView" bounds="[36,281][544,386]" />
+                          </node>
+                          <node resource-id="com.netflix.mediaclient:id/2131428685" class="android.widget.LinearLayout" bounds="[580,262][829,406]">
+                            <node resource-id="" class="android.widget.TextView" bounds="[616,281][793,386]" />
+                          </node>
+                        </node>
+                      </node>
+                      <node resource-id="com.netflix.mediaclient:id/2131429468" class="androidx.viewpager.widget.ViewPager" bounds="[0,406][1080,2196]">
+                        <node resource-id="" class="androidx.recyclerview.widget.RecyclerView" bounds="[0,406][1080,2196]">
+                          <node resource-id="" class="android.widget.FrameLayout" bounds="[0,406][1080,2196]">
+                            <node resource-id="" class="android.view.ViewGroup" bounds="[0,406][1080,2196]">
+                              <node resource-id="com.netflix.mediaclient:id/2131428192" class="android.widget.GridView" bounds="[0,406][1080,2196]">
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,737][1080,1001]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,749][456,989]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,749][900,989]" text="Saved sample 01" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,749][1044,989]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,821][1032,917]" content-desc="Play" />
+                                  </node>
+                                </node>
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,1001][1080,1265]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,1013][456,1253]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,1013][900,1253]" text="Saved sample 02" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,1013][1044,1253]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,1085][1032,1181]" content-desc="Play" />
+                                  </node>
+                                </node>
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,1265][1080,1529]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,1277][456,1517]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,1277][900,1517]" text="Saved sample 03" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,1277][1044,1517]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,1349][1032,1445]" content-desc="Play" />
+                                  </node>
+                                </node>
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,1529][1080,1793]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,1541][456,1781]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,1541][900,1781]" text="Saved sample 04" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,1541][1044,1781]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,1613][1032,1709]" content-desc="Play" />
+                                  </node>
+                                </node>
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,1793][1080,2057]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,1805][456,2045]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,1805][900,2045]" text="Saved sample 05" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,1805][1044,2045]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,1877][1032,1973]" content-desc="Play" />
+                                  </node>
+                                </node>
+                                <node resource-id="com.netflix.mediaclient:id/2131428988" class="android.view.ViewGroup" bounds="[0,2057][1080,2196]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131427588" class="android.widget.ImageView" bounds="[36,2069][456,2196]" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131429317" class="android.widget.TextView" bounds="[480,2069][900,2196]" text="Saved sample 06" />
+                                  <node resource-id="com.netflix.mediaclient:id/2131427400" class="android.widget.FrameLayout" bounds="[924,2069][1044,2196]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428853" class="android.widget.ImageButton" bounds="[936,2141][1032,2196]" content-desc="Play" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node resource-id="com.netflix.mediaclient:id/2131428687" class="android.widget.FrameLayout" bounds="[0,406][1080,737]">
+                                <node resource-id="com.netflix.mediaclient:id/2131428688" class="android.widget.LinearLayout" bounds="[0,406][1080,737]">
+                                  <node resource-id="com.netflix.mediaclient:id/2131428680" class="android.widget.HorizontalScrollView" bounds="[36,406][1044,550]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428681" class="android.widget.LinearLayout" bounds="[36,406][1044,550]">
+                                      <node resource-id="" class="android.view.ViewGroup" bounds="[36,406][649,550]">
+                                        <node resource-id="" class="android.widget.RadioButton" bounds="[36,406][415,550]" />
+                                        <node resource-id="" class="android.widget.RadioButton" bounds="[427,406][649,550]" />
+                                      </node>
+                                      <node resource-id="" class="android.view.ViewGroup" bounds="[661,406][1044,550]">
+                                        <node resource-id="" class="android.widget.RadioButton" bounds="[661,406][932,550]" />
+                                        <node resource-id="" class="android.widget.RadioButton" bounds="[944,406][1044,550]" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node resource-id="com.netflix.mediaclient:id/2131428683" class="android.view.ViewGroup" bounds="[36,550][1044,725]">
+                                    <node resource-id="com.netflix.mediaclient:id/2131428682" class="android.widget.TextView" bounds="[36,550][1044,620]" />
+                                    <node resource-id="com.netflix.mediaclient:id/2131428684" class="android.widget.TextView" bounds="[36,620][372,725]" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node resource-id="com.netflix.mediaclient:id/2131428287" class="android.widget.FrameLayout" bounds="[0,103][1080,2196]" />
+            </node>
+            <node resource-id="com.netflix.mediaclient:id/2131428696" class="android.view.View" bounds="[0,2196][1080,2340]" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node resource-id="android:id/navigationBarBackground" class="android.view.View" bounds="[0,2196][1080,2340]" />
+  </node>
+</hierarchy>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Creative Moods, Lda.
+     SPDX-License-Identifier: Apache-2.0 -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewClicked|typeWindowStateChanged|typeWindowContentChanged|typeViewScrolled|typeWindowsChanged"
+    android:packageNames="com.netflix.mediaclient,com.amazon.avod.thirdpartyclient"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows|flagIncludeNotImportantViews"
+    android:canRetrieveWindowContent="true"
+    android:notificationTimeout="100"
+    android:description="@string/service_description"
+    android:settingsActivity="pt.creativemoods.scorepuff.ui.MainActivity"
+    android:isAccessibilityTool="false" />

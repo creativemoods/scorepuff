@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Synthetic layout built from the known poster component; not a captured Netflix screen.-->
+  <node class="androidx.recyclerview.widget.RecyclerView" bounds="[0,0][1080,2340]">
+    <node class="android.view.ViewGroup" bounds="[6,160][286,510]">
+      <node class="android.widget.TextView" text="1" content-desc="Rank 1" bounds="[6,360][66,510]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000000" bounds="[36,160][286,510]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 1" bounds="[36,160][286,510]" />
+      </node>
+    </node>
+    <node class="android.view.ViewGroup" bounds="[346,160][626,510]">
+      <node class="android.widget.TextView" text="2" content-desc="Rank 2" bounds="[346,360][406,510]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000001" bounds="[376,160][626,510]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 2" bounds="[376,160][626,510]" />
+      </node>
+    </node>
+    <node class="android.view.ViewGroup" bounds="[686,160][966,510]">
+      <node class="android.widget.TextView" text="3" content-desc="Rank 3" bounds="[686,360][746,510]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000002" bounds="[716,160][966,510]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 3" bounds="[716,160][966,510]" />
+      </node>
+    </node>
+    <node class="android.view.ViewGroup" bounds="[6,550][286,900]">
+      <node class="android.widget.TextView" text="4" content-desc="Rank 4" bounds="[6,750][66,900]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000003" bounds="[36,550][286,900]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 4" bounds="[36,550][286,900]" />
+      </node>
+    </node>
+    <node class="android.view.ViewGroup" bounds="[346,550][626,900]">
+      <node class="android.widget.TextView" text="5" content-desc="Rank 5" bounds="[346,750][406,900]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000004" bounds="[376,550][626,900]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 5" bounds="[376,550][626,900]" />
+      </node>
+    </node>
+    <node class="android.view.ViewGroup" bounds="[686,550][966,900]">
+      <node class="android.widget.TextView" text="6" content-desc="Rank 6" bounds="[686,750][746,900]" />
+      <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000005" bounds="[716,550][966,900]">
+        <node resource-id="BackgroundImage" content-desc="Mock title 6" bounds="[716,550][966,900]" />
+      </node>
+    </node>
+  </node>
+</hierarchy>

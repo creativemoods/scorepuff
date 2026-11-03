@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Synthetic layout built from the known poster component; not a captured Netflix screen.-->
+  <node class="androidx.recyclerview.widget.RecyclerView" bounds="[0,0][1080,2340]">
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000000" bounds="[36,160][338,585]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 1" bounds="[36,160][338,585]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000001" bounds="[356,160][658,585]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 2" bounds="[356,160][658,585]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000002" bounds="[676,160][978,585]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 3" bounds="[676,160][978,585]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000003" bounds="[36,605][338,1030]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 4" bounds="[36,605][338,1030]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000004" bounds="[356,605][658,1030]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 5" bounds="[356,605][658,1030]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000005" bounds="[676,605][978,1030]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 6" bounds="[676,605][978,1030]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000006" bounds="[36,1050][338,1475]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 7" bounds="[36,1050][338,1475]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000007" bounds="[356,1050][658,1475]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 8" bounds="[356,1050][658,1475]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000008" bounds="[676,1050][978,1475]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 9" bounds="[676,1050][978,1475]" />
+    </node>
+  </node>
+</hierarchy>

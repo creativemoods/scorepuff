@@ -1,0 +1,189 @@
+<hierarchy>
+  <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+    <node resource-id="" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+      <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+        <node resource-id="com.netflix.mediaclient:id/2131427396" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+          <node resource-id="android:id/content" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+            <node resource-id="com.netflix.mediaclient:id/2131427742" class="android.view.ViewGroup" bounds="[0,0][1080,2340]">
+              <node resource-id="com.netflix.mediaclient:id/2131427869" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]" />
+              <node resource-id="com.netflix.mediaclient:id/2131429342" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                <node resource-id="com.netflix.mediaclient:id/2131428187" class="android.widget.LinearLayout" bounds="[0,0][1080,2340]">
+                  <node resource-id="com.netflix.mediaclient:id/2131428879" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                    <node resource-id="" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                      <node resource-id="com.netflix.mediaclient:id/2131429032" class="android.widget.FrameLayout" bounds="[0,0][1080,2340]">
+                        <node resource-id="com.netflix.mediaclient:id/2131429037" class="android.widget.FrameLayout" bounds="[0,0][1080,2196]">
+                          <node resource-id="" class="androidx.compose.ui.platform.ComposeView" bounds="[0,0][1080,2196]">
+                            <node resource-id="" class="android.view.View" bounds="[0,0][1080,2196]">
+                              <node resource-id="SearchOnDeppUI" class="android.view.View" bounds="[0,0][1080,2196]">
+                                <node resource-id="SearchResultsSearchBar" class="android.widget.EditText" bounds="[48,103][1032,247]">
+                                  <node resource-id="" class="android.view.View" bounds="[36,103][180,247]">
+                                    <node resource-id="" class="android.view.View" bounds="[48,115][168,235]" />
+                                    <node resource-id="" class="android.view.View" bounds="[48,115][168,235]" />
+                                    <node resource-id="" class="android.widget.Button" bounds="[48,115][168,235]" />
+                                  </node>
+                                  <node resource-id="" class="android.widget.TextView" bounds="[192,139][888,211]" />
+                                  <node resource-id="" class="android.view.View" bounds="[192,139][562,211]" />
+                                  <node resource-id="" class="android.view.View" bounds="[900,103][1044,247]">
+                                    <node resource-id="" class="android.view.View" bounds="[912,115][1032,235]" />
+                                    <node resource-id="" class="android.view.View" bounds="[912,115][1032,235]" />
+                                    <node resource-id="" class="android.widget.Button" bounds="[912,115][1032,235]" />
+                                  </node>
+                                </node>
+                                <node resource-id="PrequerySearchSuccess" class="android.view.View" bounds="[0,247][1080,2196]">
+                                  <node resource-id="PinotListSection:PinotStandardSectionTreatment" class="android.view.View" bounds="[36,286][1044,379]">
+                                    <node resource-id="" class="android.widget.TextView" bounds="[36,295][1044,376]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Show:Video:90000001" class="android.view.View" bounds="[36,391][1044,594]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,391][396,594]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,391][396,594]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,454][918,526]" text="Sample show 01" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,421][1068,565]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,445][1044,541]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,445][1044,541]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,445][1044,541]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,391][1044,594]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Show:Video:90000002" class="android.view.View" bounds="[36,618][1044,821]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,618][396,821]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,618][396,821]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,681][918,753]" text="Sample show 02" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,648][1068,792]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,672][1044,768]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,672][1044,768]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,672][1044,768]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,618][1044,821]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Movie:Video:90000003" class="android.view.View" bounds="[36,845][1044,1048]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,845][396,1048]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,845][396,1048]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,908][918,980]" text="Sample show 03" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,875][1068,1019]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,899][1044,995]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,899][1044,995]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,899][1044,995]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,845][1044,1048]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Movie:Video:90000004" class="android.view.View" bounds="[36,1072][1044,1275]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,1072][396,1275]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,1072][396,1275]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,1135][918,1207]" text="Sample show 04" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,1102][1068,1246]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,1126][1044,1222]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,1126][1044,1222]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,1126][1044,1222]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,1072][1044,1275]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Show:Video:90000005" class="android.view.View" bounds="[36,1299][1044,1502]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,1299][396,1502]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,1299][396,1502]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,1362][918,1434]" text="Sample show 05" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,1329][1068,1473]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,1353][1044,1449]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,1353][1044,1449]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,1353][1044,1449]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,1299][1044,1502]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Movie:Video:90000006" class="android.view.View" bounds="[36,1526][1044,1729]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,1526][396,1729]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,1526][396,1729]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,1589][918,1661]" text="Sample show 06" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,1556][1068,1700]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,1580][1044,1676]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,1580][1044,1676]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,1580][1044,1676]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,1526][1044,1729]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Show:Video:90000007" class="android.view.View" bounds="[36,1753][1044,1956]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,1753][396,1956]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,1753][396,1956]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,1780][918,1924]" text="Sample show 07" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,1783][1068,1927]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,1807][1044,1903]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,1807][1044,1903]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,1807][1044,1903]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,1753][1044,1956]" />
+                                  </node>
+                                  <node resource-id="PinotUIEntity:PinotHorizontalArtworkWithPlaybackEntityTreatment:Movie:Video:90000008" class="android.view.View" bounds="[36,1980][1044,2183]">
+                                    <node resource-id="" class="android.view.View" bounds="[36,1980][396,2183]">
+                                      <node resource-id="BackgroundImage" class="android.view.View" bounds="[36,1980][396,2183]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.TextView" bounds="[426,2043][918,2115]" text="Sample show 08" />
+                                    <node resource-id="HorizontalArtworkWithPlaybackPlayButton" class="android.view.View" bounds="[924,2010][1068,2154]">
+                                      <node resource-id="" class="android.view.View" bounds="[948,2034][1044,2130]" />
+                                      <node resource-id="" class="android.view.View" bounds="[948,2034][1044,2130]" />
+                                      <node resource-id="" class="android.widget.Button" bounds="[948,2034][1044,2130]" />
+                                    </node>
+                                    <node resource-id="" class="android.widget.Button" bounds="[36,1980][1044,2183]" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node resource-id="com.netflix.mediaclient:id/2131429196" class="android.view.View" bounds="[0,0][1080,103]" />
+                      <node resource-id="com.netflix.mediaclient:id/2131427392" class="android.widget.LinearLayout" bounds="[0,0][1080,103]" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node resource-id="com.netflix.mediaclient:id/2131428287" class="android.widget.FrameLayout" bounds="[0,103][1080,2196]" />
+              <node resource-id="com.netflix.mediaclient:id/2131427412" class="android.view.View" bounds="[0,1869][1080,2196]" />
+              <node resource-id="com.netflix.mediaclient:id/2131427413" class="android.widget.FrameLayout" bounds="[0,1944][1080,2196]">
+                <node resource-id="" class="androidx.compose.ui.platform.ComposeView" bounds="[0,1944][1080,2196]">
+                  <node resource-id="" class="android.view.View" bounds="[0,1944][1080,2196]">
+                    <node resource-id="" class="android.view.View" bounds="[0,1944][1080,2196]">
+                      <node resource-id="" class="android.view.View" bounds="[75,2004][1005,2148]">
+                        <node resource-id="tab_bar_item_Home" class="android.view.View" bounds="[75,2004][303,2148]">
+                          <node resource-id="" class="android.view.View" bounds="[75,2004][303,2148]" content-desc="Home" />
+                          <node resource-id="" class="android.view.View" bounds="[117,1981][261,2125]" />
+                          <node resource-id="" class="android.widget.TextView" bounds="[149,2101][229,2136]" />
+                          <node resource-id="" class="android.view.View" bounds="[75,2004][303,2148]" />
+                        </node>
+                        <node resource-id="tab_bar_item_VerticalVideoFeed" class="android.view.View" bounds="[309,2004][537,2148]">
+                          <node resource-id="" class="android.view.View" bounds="[309,2004][537,2148]" content-desc="Clips" />
+                          <node resource-id="" class="android.view.View" bounds="[351,1981][495,2125]" />
+                          <node resource-id="" class="android.widget.TextView" bounds="[389,2101][457,2136]" />
+                          <node resource-id="" class="android.view.View" bounds="[309,2004][537,2148]" />
+                        </node>
+                        <node resource-id="tab_bar_item_Search" class="android.view.View" bounds="[543,2004][771,2148]">
+                          <node resource-id="" class="android.view.View" bounds="[543,2004][771,2148]" content-desc="Search" />
+                          <node resource-id="" class="android.widget.TextView" bounds="[610,2101][704,2136]" />
+                          <node resource-id="" class="android.view.View" bounds="[543,2004][771,2148]" />
+                        </node>
+                        <node resource-id="tab_bar_item_MyNetflix" class="android.view.View" bounds="[777,2004][1005,2148]">
+                          <node resource-id="" class="android.view.View" bounds="[777,2004][1005,2148]" content-desc="My Netflix" />
+                          <node resource-id="" class="android.view.View" bounds="[819,1981][963,2125]">
+                            <node resource-id="BackgroundImage" class="android.view.View" bounds="[855,2017][927,2089]" />
+                          </node>
+                          <node resource-id="" class="android.widget.TextView" bounds="[823,2101][959,2136]" />
+                          <node resource-id="" class="android.view.View" bounds="[777,2004][1005,2148]" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node resource-id="com.netflix.mediaclient:id/2131428696" class="android.view.View" bounds="[0,2196][1080,2340]" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node resource-id="android:id/navigationBarBackground" class="android.view.View" bounds="[0,2196][1080,2340]" />
+  </node>
+</hierarchy>

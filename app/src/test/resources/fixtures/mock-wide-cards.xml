@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Synthetic layout built from the known poster component; not a captured Netflix screen.-->
+  <node class="androidx.recyclerview.widget.RecyclerView" bounds="[0,0][1080,2340]">
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000000" bounds="[36,160][516,430]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 1" bounds="[36,160][516,430]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000001" bounds="[546,160][1026,430]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 2" bounds="[546,160][1026,430]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000002" bounds="[36,470][516,740]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 3" bounds="[36,470][516,740]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000003" bounds="[546,470][1026,740]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 4" bounds="[546,470][1026,740]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Movie:Video:90000004" bounds="[36,780][516,1050]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 5" bounds="[36,780][516,1050]" />
+    </node>
+    <node resource-id="PinotUIEntity:PinotStandardBoxshotEntityTreatment:Show:Video:90000005" bounds="[546,780][1026,1050]">
+      <node resource-id="BackgroundImage" content-desc="Mock title 6" bounds="[546,780][1026,1050]" />
+    </node>
+  </node>
+</hierarchy>

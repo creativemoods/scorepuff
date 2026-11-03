@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy>
+  <!--Captured Samsung SM-S931B, English Netflix UI, 2026-11-03. Sanitized title/layout metadata only.-->
+  <node resource-id="android:id/content" class="android.view.ViewGroup" bounds="[48,430][1080,1114]">
+    <node resource-id="" class="android.view.View" bounds="[48,430][1080,1114]">
+      <node resource-id="" class="android.view.View" bounds="[48,430][1080,1114]">
+        <node resource-id="" class="android.view.View" bounds="[48,430][1080,1114]">
+          <node resource-id="" class="android.widget.ScrollView" bounds="[174,454][954,1090]">
+            <node resource-id="" class="android.view.View" bounds="[810,454][954,598]">
+              <node resource-id="" class="android.view.View" bounds="[822,466][942,586]" />
+              <node resource-id="" class="android.view.View" bounds="[822,466][942,586]" />
+              <node resource-id="" class="android.widget.Button" bounds="[822,466][942,586]" />
+            </node>
+            <node resource-id="" class="android.widget.TextView" bounds="[186,682][942,910]" />
+            <node resource-id="" class="android.widget.TextView" bounds="[186,910][942,1054]" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</hierarchy>

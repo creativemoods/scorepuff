@@ -1,0 +1,2 @@
+# Copy to omdb.properties and supply your own activated OMDb API key.
+omdb.apiKey=
