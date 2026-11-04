@@ -3,15 +3,15 @@
 <resources>
     <string name="app_name">ScorePuff</string>
     <string name="service_name">ScorePuff badges</string>
-    <string name="website_url" translatable="false">https://scorepuff.creativemoods.pt</string>
-    <string name="website_label" translatable="false">scorepuff.creativemoods.pt</string>
+    <string name="website_url" translatable="false">https://creativemoods.pt/scorepuff</string>
+    <string name="website_label" translatable="false">creativemoods.pt/scorepuff</string>
     <string name="service_description">Reads Netflix and Prime Video’s on-screen movie and show titles and poster positions to draw ratings. Recognized titles, displayed release year and movie/show type are sent to OMDb over HTTPS to match IMDb IDs and retrieve IMDb and Rotten Tomatoes scores. Results are cached locally. No video capture or collection of unrelated accessibility content. Disable here at any time.</string>
     <style name="Theme.ScorePuff" parent="android:style/Theme.Material.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:colorAccent">#F5C518</item>
-        <item name="android:windowBackground">#101218</item>
-        <item name="android:statusBarColor">#101218</item>
-        <item name="android:navigationBarColor">#101218</item>
+        <item name="android:colorAccent">#FFCC00</item>
+        <item name="android:windowBackground">#190A2B</item>
+        <item name="android:statusBarColor">#190A2B</item>
+        <item name="android:navigationBarColor">#190A2B</item>
     </style>
 </resources>

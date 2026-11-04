@@ -1,11 +1,16 @@
 # ScorePuff
 
-Compact rating badges for Netflix and Prime Video on Android.
+![ScorePuff](docs/brand/logo-horizontal.png)
 
-Website: [scorepuff.creativemoods.pt](https://scorepuff.creativemoods.pt)  
+**Ratings that pop.** Compact rating badges for Netflix and Prime Video on Android.
+
+Website: [creativemoods.pt/scorepuff](https://creativemoods.pt/scorepuff)
+
 Android package: `pt.creativemoods.scorepuff`
 
 ScorePuff reads supported accessibility layouts and places a non-touchable badge beside a title or in the upper-right corner of its artwork. This is a proof of concept: streaming-app layouts and metadata coverage vary.
+
+See the [brand assets and guidelines](docs/brand/README.md) for the popcorn mascot, purple-and-gold palette and reusable artwork.
 
 ## Badges and matching
 
@@ -21,28 +26,29 @@ OMDb supplies metadata and scores. Matching requires a unique exact normalized t
 Requirements: JDK 17, Android SDK platform 35 and platform tools. Minimum device version: Android 10 / API 29. Android Studio can configure the SDK and generate the ignored `local.properties` file.
 
 ```sh
-cp omdb.properties.example omdb.properties
-# Set omdb.apiKey to your own activated OMDb key in the local file.
 ./gradlew testDebugUnitTest lintDebug assembleDebug
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
 On a headless development machine, configure `JAVA_HOME` and `ANDROID_HOME` for your own installations. No developer-specific paths are required in tracked files.
 
-The personal key is included only in debug builds and is extractable from their APKs. **Do not publish a configured debug APK.** Release builds contain no key; production credential provisioning is outside this prototype. No key is required for unit tests or offline previews.
+Neither debug nor release builds include an OMDb key. Enter your own activated key in the app settings after installation. No key is required to build, run unit tests or use offline previews. Legacy `omdb.properties` files are ignored and no longer read by the build.
 
 ## Use
 
-1. Open ScorePuff, read its disclosure and enable its accessibility service in Android settings. Sideloaded apps may require **Allow restricted settings** first.
-2. Open Netflix or Prime Video in portrait and browse supported artwork/details pages. First-time lookups require network access.
-3. To confirm a list association, open supported details with the year visible and choose Share → the system's additional sharing options → ScorePuff. Prime uses **Share → More**. Check the title/year/type, IMDb ID and score before saving.
-4. Use **Manual match** to preview a specific IMDb ID, save a choice or remove a saved match. **Show ratings** pauses lookups and overlays; disabling the accessibility service removes it.
+1. Open ScorePuff and enter your activated **OMDb API key** in settings, then tap **Save key**. You can replace or remove it there without rebuilding; changes apply immediately.
+2. Read its disclosure and enable its accessibility service in Android settings. Sideloaded apps may require **Allow restricted settings** first.
+3. Open Netflix or Prime Video in portrait and browse supported artwork/details pages. First-time lookups require network access.
+4. To confirm a list association, open supported details with the year visible and choose Share → the system's additional sharing options → ScorePuff. Prime uses **Share → More**. Check the title/year/type, IMDb ID and score before saving.
+5. Use **Manual match** to preview a specific IMDb ID, save a choice or remove a saved match. **Show ratings** pauses lookups and overlays; disabling the accessibility service removes it.
 
 Sharing is optional: dated details-page matches are saved automatically. Share supplies a catalog ID for reuse on yearless Netflix cards. Captured Prime cards do not expose a GTI, so their confirmation explicitly also saves a title-based choice for cards with the same name/type; namesakes can share that choice. Netflix and Prime mappings are separate. Conflicting manual Prime choices must be removed before replacing them.
 
 A unique title/year/type may have different catalog durations. The Share preview discloses this for confirmation and omits the differing runtime from saved identity evidence. Duration remains strict when needed to disambiguate namesakes.
 
 ## Local data and privacy
+
+The API key is stored in app-private preferences, encrypted with an Android Keystore key. The entry field is masked and never displays the saved key. Removing it pauses provider lookups while keeping cached data and associations.
 
 Mappings, scores, negative results and retry state stay in Room on the device. There is no central mapping database or upload of associations. Scores normally refresh after 24 hours; automatic positive mappings after 30 days. Manual choices retain priority until removed.
 
@@ -65,7 +71,7 @@ adb logcat -s NRService:V NROverlay:V NRSettings:V AndroidRuntime:E
 
 Commit the Android source and resources, unit tests and sanitized fixtures, exported Room schemas, Gradle build files/wrapper, development tools and documentation. Room schemas contain structure, not device records. The wrapper JAR is required build tooling.
 
-Keep API/signing credentials, SDK/JDK downloads, caches, generated packages, logs, database copies, raw UI dumps and personal notes local. `.gitignore` covers these; `omdb.properties.example` is deliberately blank. Browse/watch-list fixtures use synthetic titles, catalog IDs and progress. Focused matching regression cases use public film/catalog metadata, not account identifiers.
+Keep API/signing credentials, SDK/JDK downloads, caches, generated packages, logs, database copies, raw UI dumps and personal notes local. `.gitignore` covers these, including legacy OMDb properties files. Browse/watch-list fixtures use synthetic titles, catalog IDs and progress. Focused matching regression cases use public film/catalog metadata, not account identifiers.
 
 Before committing, review `git status --short`, `git add --dry-run .` and your staged diff. Ignore rules do not remove files already tracked or secrets in existing history. See [publishing checks](docs/publishing.md).
 

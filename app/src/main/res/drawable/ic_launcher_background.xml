@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Creative Moods, Lda.
+     SPDX-License-Identifier: Apache-2.0 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"><gradient android:startColor="#4C156A" android:endColor="#160823" android:angle="315" /></shape>

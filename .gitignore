@@ -8,7 +8,6 @@ local.properties*
 
 # Private configuration (commit only blank templates)
 omdb.properties*
-!omdb.properties.example
 omdb.*.properties
 *.local.properties*
 keystore.properties

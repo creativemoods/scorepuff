@@ -47,9 +47,9 @@ class MockCatalogActivity : ComponentActivity() {
                 "Series details (mock)" to "mock-series-details.xml", "Unsupported layout (mock)" to "mock-unsupported.xml")
             var fixture by remember { mutableStateOf("captured-standard.xml") }
             var menuOpen by remember { mutableStateOf(false) }
-            MaterialTheme(colorScheme = darkColorScheme()) {
+            pt.creativemoods.scorepuff.ui.ScorePuffTheme {
                 CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.onBackground) {
-                    Column(Modifier.fillMaxSize().background(ComposeColor(0xFF101218)).safeDrawingPadding()) {
+                    Column(Modifier.fillMaxSize().background(ComposeColor(0xFF190A2B)).safeDrawingPadding()) {
                         Text("ScorePuff playground", Modifier.padding(12.dp), style = MaterialTheme.typography.titleLarge)
                         Text("Offline mock • synthetic scores • drag to scroll", Modifier.padding(horizontal = 12.dp),
                             style = MaterialTheme.typography.bodySmall)
@@ -138,7 +138,7 @@ private class FixtureArtwork(context: Context, fixture: String, val submit: (Lis
     }
 
     override fun onDraw(canvas: Canvas) {
-        canvas.drawColor(Color.rgb(16, 18, 24))
+        canvas.drawColor(Color.rgb(25, 10, 43))
         if (shown.isEmpty()) {
             paint.color = Color.LTGRAY; paint.typeface = Typeface.DEFAULT; paint.textSize = 14 * density
             canvas.drawText("No recognized cards — no badges", 12 * density, 36 * density, paint)

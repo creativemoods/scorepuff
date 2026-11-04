@@ -38,16 +38,20 @@ data class SharedMatchState(
     val message: String = ""
 )
 
+data class OmdbKeyEditState(val busy: Boolean = false, val message: String = "")
+
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     val manualMappings = AppContainer.mappings(application).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
     private val manualMutable = MutableStateFlow(ManualMatchState())
     val manualMatch = manualMutable.asStateFlow()
-    private val matches = AppContainer.manualMatches(application)
     private var operation: Job? = null
     private var shareOperation: Job? = null
     private val sharedMutable = MutableStateFlow(SharedMatchState())
     val sharedMatch = sharedMutable.asStateFlow()
-    private val shares = AppContainer.sharedMatches(application)
+    private val keySettings = AppContainer.omdbSettings(application)
+    val omdbKeyState = keySettings.state
+    private val keyEditMutable = MutableStateFlow(OmdbKeyEditState())
+    val omdbKeyEdit = keyEditMutable.asStateFlow()
     val diagnostics = DiagnosticsRepository.state
     private val enabledState = MutableStateFlow(false)
     val enabled = enabledState.asStateFlow()
@@ -77,7 +81,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
         shareOperation = viewModelScope.launch {
             try {
-                val preview = shares.preview(link, visit.title)
+                val preview = AppContainer.sharedMatches(getApplication()).preview(link, visit.title)
                 sharedMutable.update { it.copy(preview = preview, busy = false) }
             } catch (failure: CancellationException) { throw failure }
             catch (failure: Exception) {
@@ -95,7 +99,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         shareOperation = viewModelScope.launch {
             sharedMutable.update { it.copy(busy = true) }
             try {
-                shares.save(preview)
+                AppContainer.sharedMatches(getApplication()).save(preview)
                 sharedMutable.update { it.copy(preview = null, busy = false,
                     message = "Association saved locally. Return to the streaming app to see its ratings on list cards.") }
             } catch (failure: CancellationException) { throw failure }
@@ -125,7 +129,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val state = manualMutable.value
         val target = state.selected ?: return
         runManualOperation {
-            val preview = matches.preview(target, state.imdbId)
+            val preview = AppContainer.manualMatches(getApplication()).preview(target, state.imdbId)
             manualMutable.update { it.copy(preview = preview, message = "Check the title, year and type before saving.") }
         }
     }
@@ -135,7 +139,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val target = state.selected ?: return
         val preview = state.preview ?: return
         runManualOperation {
-            val saved = matches.save(target, preview)
+            val saved = AppContainer.manualMatches(getApplication()).save(target, preview)
             manualMutable.update { it.copy(selected = saved, preview = null,
                 message = "Saved ${preview.candidate.title} (${preview.candidate.year}). Return to the streaming app to see its ratings.") }
         }
@@ -144,7 +148,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun removeManualMatch() {
         val target = manualMutable.value.selected?.takeIf { it.matchConfidence == "manual" } ?: return
         runManualOperation {
-            matches.remove(target)
+            AppContainer.manualMatches(getApplication()).remove(target)
             manualMutable.value = ManualMatchState(message = "Manual match removed. Automatic matching will resume.")
         }
     }
@@ -167,6 +171,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 manualMutable.update { it.copy(preview = null, message = "Could not save or retrieve this match. Try again.") }
             } finally {
                 manualMutable.update { it.copy(busy = false) }
+            }
+        }
+    }
+
+    fun saveOmdbKey(value: String) {
+        if (keyEditMutable.value.busy) return
+        viewModelScope.launch {
+            keyEditMutable.value = OmdbKeyEditState(busy = true)
+            try {
+                operation?.cancelAndJoin()
+                shareOperation?.cancelAndJoin()
+                manualMutable.update { it.copy(preview = null, busy = false, message = "") }
+                sharedMutable.value = SharedMatchState()
+                withContext(Dispatchers.IO) { keySettings.save(value) }
+                keyEditMutable.value = OmdbKeyEditState(message = if (value.trim().isEmpty()) "Key removed. Lookups are paused until you save a key."
+                    else "Key saved on this phone. Lookups will use it immediately.")
+            } catch (failure: CancellationException) { throw failure }
+            catch (failure: IllegalArgumentException) {
+                keyEditMutable.value = OmdbKeyEditState(message = "Use only letters and numbers, up to 128 characters.")
+            } catch (_: Exception) {
+                keyEditMutable.value = OmdbKeyEditState(message = "Could not save the key on this phone. Please try again.")
             }
         }
     }

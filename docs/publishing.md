@@ -1,6 +1,6 @@
 # Publishing source safely
 
-The public repository should contain source/build tooling and sanitized regression data. Generated APKs are not source releases: a configured debug APK contains its owner's OMDb key.
+The public repository should contain source/build tooling and sanitized regression data. Generated APKs are not source releases. Current debug and release builds contain no OMDb key: users supply it in app settings. Older debug APKs built with `omdb.properties` may still contain a key and must not be published.
 
 Before the first commit or a later public push:
 
@@ -13,7 +13,7 @@ git diff --cached --stat
 git diff --cached
 ```
 
-Inspect staged changes for credentials, private paths, raw device captures and database records. Keep the blank `omdb.properties.example`, Gradle wrapper JAR, Room schema JSON and sanitized fixtures. Avoid a blanket ignore of JAR/JSON/XML files: those would remove required build or test inputs.
+Inspect staged changes for credentials, private paths, raw device captures and database records. Keep the Gradle wrapper JAR, Room schema JSON and sanitized fixtures. Legacy OMDb properties files remain local; no credential template is needed. Avoid a blanket ignore of JAR/JSON/XML files: those would remove required build or test inputs.
 
 Local-only folders include `local-captures/`, `local-notes/`, `.tools/`, `.gradle/` and `.kotlin/`. Signing keys, environment files, logs, database copies and Android packages are also ignored. Add a specific ignore rule for new private configuration rather than relying on file extensions alone.
 

@@ -14,6 +14,7 @@ import android.os.PowerManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityWindowInfo
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import pt.creativemoods.scorepuff.data.DiagnosticsRepository
@@ -67,8 +68,21 @@ class ScorePuffAccessibilityService : AccessibilityService() {
                 if (currentTitles.isNotEmpty()) DiagnosticsRepository.badgesUpdated(count)
             }
         }
-        ratings = AppContainer.ratings(this, scope)
-        scope.launch { ratings!!.states.collect { renderRatings() } }
+        scope.launch {
+            AppContainer.omdbSettings(this@ScorePuffAccessibilityService).state
+                .map { it.revision }.distinctUntilChanged().collectLatest {
+                    // collectLatest cancels and joins all old request jobs before using the new key.
+                    ratings = null
+                    overlay?.hide()
+                    coroutineScope {
+                        val repository = AppContainer.ratings(this@ScorePuffAccessibilityService, this)
+                        ratings = repository
+                        repository.setVisible(currentTitles)
+                        try { repository.states.collect { renderRatings() } }
+                        finally { if (ratings === repository) ratings = null }
+                    }
+                }
+        }
         scope.launch { AppContainer.matchChanges.collect {
             ratings?.invalidateMatches()
             ratings?.setVisible(currentTitles)

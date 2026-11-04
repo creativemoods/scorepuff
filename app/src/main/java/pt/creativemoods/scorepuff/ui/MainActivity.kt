@@ -20,13 +20,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pt.creativemoods.scorepuff.R
 import pt.creativemoods.scorepuff.data.DiagnosticsRepository
-import pt.creativemoods.scorepuff.config.ApiConfiguration
 
 class MainActivity : ComponentActivity() {
     private val model: MainViewModel by viewModels()
@@ -34,37 +33,40 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        @Suppress("DEPRECATION")
+        window.statusBarColor = android.graphics.Color.rgb(25, 10, 43)
+        @Suppress("DEPRECATION")
+        window.navigationBarColor = android.graphics.Color.rgb(17, 7, 29)
         if (savedInstanceState == null && intent.action == Intent.ACTION_SEND) model.receiveShare(intent.getStringExtra(Intent.EXTRA_TEXT).orEmpty())
         setContent {
             val diagnostics by model.diagnostics.collectAsStateWithLifecycle()
             val enabled by model.enabled.collectAsStateWithLifecycle()
-            MaterialTheme(colorScheme = darkColorScheme(
-                primary = Color(0xFFF5C518), background = Color(0xFF101218), surface = Color(0xFF1A1D26)
-            )) {
+            val omdbKeyState by model.omdbKeyState.collectAsStateWithLifecycle()
+            ScorePuffTheme {
                 SharedMatchDialog(model)
-                Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
+                Column(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color(0xFF280B40), PuffPurple, Color(0xFF11071D))))
                     .safeDrawingPadding().verticalScroll(rememberScrollState()).padding(24.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                    Text(getString(R.string.app_name), style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary)
-                    Text("Ratings, on the poster.", style = MaterialTheme.typography.headlineLarge,
-                        color = MaterialTheme.colorScheme.onBackground, fontWeight = FontWeight.Bold)
-                    Text("IMDb + Rotten Tomatoes · via OMDb", color = MaterialTheme.colorScheme.primary)
-                    if (pt.creativemoods.scorepuff.BuildConfig.DEBUG) {
-                        OutlinedButton(onClick = {
-                            startActivity(Intent().setClassName(this@MainActivity,
-                                "pt.creativemoods.scorepuff.ui.MockCatalogActivity"))
-                        }) { Text("Open rating playground") }
-                    }
+                    Text("Settings", style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onBackground)
+                    ScorePuffBrand()
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Text(if (enabled) "Accessibility enabled" else "Accessibility disabled",
-                                style = MaterialTheme.typography.titleMedium)
+                            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                                Text("Accessibility service", Modifier.weight(1f),
+                                    style = MaterialTheme.typography.titleMedium)
+                                Surface(color = if (enabled) Color(0xFF357B44) else MaterialTheme.colorScheme.surfaceVariant,
+                                    shape = androidx.compose.foundation.shape.RoundedCornerShape(50)) {
+                                    Text(if (enabled) "Enabled" else "Disabled", Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+                                        style = MaterialTheme.typography.labelMedium, color = Color.White)
+                                }
+                            }
                             Text(if (diagnostics.connected) "Service connected" else "Service not connected")
                             Text(diagnostics.overlayStatus)
                             Text("${diagnostics.detectedCount} visible titles · ${diagnostics.badgeCount} badges")
                         }
                     }
+                    OmdbSettingsCard(model)
                     Text("This service reads Netflix and Prime Video’s on-screen titles and poster positions. It sends recognized titles, displayed release year and movie/show type to OMDb over HTTPS to find IMDb IDs and retrieve ratings. Results are cached on this phone. It does not capture video or collect unrelated accessibility content.",
                         color = MaterialTheme.colorScheme.onBackground)
                     Text("Badges show one score out of 10: the equal average of IMDb and Rotten Tomatoes (RT percentage divided by 10). Missing sources are excluded. A white spinner means loading; an amber circled question mark means the title is ambiguous. Titles with no available scores stay blank. You can pause lookups and badges below or disable the service in Android settings.",
@@ -76,6 +78,10 @@ class MainActivity : ComponentActivity() {
                         color = MaterialTheme.colorScheme.onBackground)
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(16.dp)) {
+                            Text("Overlay settings", style = MaterialTheme.typography.titleMedium)
+                            Text("Netflix and Prime Video", style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Spacer(Modifier.height(8.dp))
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text("Show ratings", Modifier.weight(1f))
                                 Switch(diagnostics.overlayAllowed, onCheckedChange = model::setOverlay)
@@ -90,12 +96,18 @@ class MainActivity : ComponentActivity() {
                         try { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_url)))) }
                         catch (_: ActivityNotFoundException) { /* No browser is installed. */ }
                     }) { Text(getString(R.string.website_label)) }
+                    if (pt.creativemoods.scorepuff.BuildConfig.DEBUG) {
+                        OutlinedButton(onClick = {
+                            startActivity(Intent().setClassName(this@MainActivity,
+                                "pt.creativemoods.scorepuff.ui.MockCatalogActivity"))
+                        }) { Text("Open rating playground") }
+                    }
                     ManualMatchSettings(model)
                     Text("Diagnostics", style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.onBackground)
                     Text("Scans: ${diagnostics.scanCount}\nLast scan: ${diagnostics.lastScan}\nStandard posters and supported Continue Watching cards. Badges hide during playback or landscape.",
                         color = MaterialTheme.colorScheme.onBackground)
-                    Text(if (ApiConfiguration.omdbApiKey().isNotBlank()) "OMDb key configured" else "OMDb key missing · configure and rebuild",
+                    Text(if (omdbKeyState.configured) "OMDb key configured" else "OMDb key missing · add it in settings",
                         color = MaterialTheme.colorScheme.primary)
                     Text(diagnostics.ratingsSummary, color = MaterialTheme.colorScheme.onBackground)
                     if (diagnostics.debug) {
@@ -110,6 +122,8 @@ class MainActivity : ComponentActivity() {
                     Text("Recent errors", color = MaterialTheme.colorScheme.primary)
                     Text(diagnostics.errors.joinToString("\n").ifEmpty { "None in this process" },
                         color = MaterialTheme.colorScheme.onBackground)
+                    Text("ScorePuff · Version ${pt.creativemoods.scorepuff.BuildConfig.VERSION_NAME}",
+                        style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                     Text("Ratings supplied by OMDb (omdbapi.com), CC BY-NC 4.0. Not affiliated with Netflix, Amazon, IMDb, or Rotten Tomatoes.",
                         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }

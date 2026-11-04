@@ -6,6 +6,7 @@ package pt.creativemoods.scorepuff.overlay
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Path
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.view.View
@@ -14,6 +15,7 @@ import pt.creativemoods.scorepuff.data.models.ScreenRect
 
 class RatingBadgeView(context: Context) : View(context) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { typeface = Typeface.DEFAULT_BOLD }
+    private val star = Path()
     private val density = resources.displayMetrics.density
     private val textScale = density * resources.configuration.fontScale
     private var titles = emptyList<TitleBadge>()
@@ -81,8 +83,16 @@ class RatingBadgeView(context: Context) : View(context) {
             val left = (r.left - origin[0]).toFloat()
             val top = (r.top - origin[1]).toFloat()
             paint.style = Paint.Style.FILL
-            paint.color = Color.argb(245, 16, 18, 24)
-            canvas.drawRoundRect(left, top, left + r.width, top + r.height, 4 * density, 4 * density, paint)
+            paint.color = Color.argb(250, 29, 9, 47)
+            val inset = 0.65f * density
+            val corner = r.height / 2f
+            canvas.drawRoundRect(left, top, left + r.width, top + r.height, corner, corner, paint)
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 1.3f * density
+            paint.color = Color.rgb(255, 204, 0)
+            canvas.drawRoundRect(left + inset, top + inset, left + r.width - inset,
+                top + r.height - inset, corner, corner, paint)
+            paint.style = Paint.Style.FILL
             if (content == BadgeContent.Loading) {
                 loadingVisible = true
                 val cx = left + r.width / 2f
@@ -102,23 +112,40 @@ class RatingBadgeView(context: Context) : View(context) {
             if (ambiguous) {
                 paint.style = Paint.Style.STROKE
                 paint.strokeWidth = 1.3f * density
-                paint.color = Color.rgb(255, 204, 102)
+                paint.color = Color.rgb(255, 204, 0)
                 canvas.drawCircle(left + r.width / 2f, top + r.height / 2f, 7 * density, paint)
             }
             paint.style = Paint.Style.FILL
             val label = if (content is BadgeContent.Score) content.label else "?"
             paint.textSize = (if (ambiguous) 10 else 12) * textScale
             // Fit even 10.0 and larger system font sizes without truncating the number.
-            val availableWidth = if (ambiguous) 10 * density else r.width - 8 * density
+            if (!ambiguous) {
+                star.reset()
+                val cx = left + 6 * density
+                val cy = top + r.height / 2f
+                for (point in 0 until 10) {
+                    val angle = Math.PI * point / 5 - Math.PI / 2
+                    val radius = (if (point % 2 == 0) 3.5f else 1.65f) * density
+                    val x = cx + kotlin.math.cos(angle).toFloat() * radius
+                    val y = cy + kotlin.math.sin(angle).toFloat() * radius
+                    if (point == 0) star.moveTo(x, y) else star.lineTo(x, y)
+                }
+                star.close()
+                paint.color = Color.rgb(255, 204, 0)
+                canvas.drawPath(star, paint)
+            }
+            val availableWidth = if (ambiguous) 10 * density else r.width - 13 * density
             val availableHeight = if (ambiguous) 12 * density else r.height - 4 * density
             val metrics = paint.fontMetrics
             val fit = minOf(1f, availableWidth / paint.measureText(label),
                 availableHeight / (metrics.descent - metrics.ascent))
             paint.textSize *= fit
-            paint.color = if (ambiguous) Color.rgb(255, 204, 102) else Color.WHITE
+            paint.color = if (ambiguous) Color.rgb(255, 204, 0) else Color.WHITE
             val fittedMetrics = paint.fontMetrics
             val baseline = top + r.height / 2f - (fittedMetrics.ascent + fittedMetrics.descent) / 2f
-            canvas.drawText(label, left + (r.width - paint.measureText(label)) / 2f, baseline, paint)
+            val textLeft = if (ambiguous) left else left + 10 * density
+            val textWidth = if (ambiguous) r.width.toFloat() else r.width - 12 * density
+            canvas.drawText(label, textLeft + (textWidth - paint.measureText(label)) / 2f, baseline, paint)
         }
         // Animate only when a loading icon actually fits in the visible viewport.
         if (loadingVisible && isAttachedToWindow) postInvalidateDelayed(50)

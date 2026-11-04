@@ -60,6 +60,16 @@ interface RatingsDao : RatingsCache {
     @Query("SELECT * FROM ratings WHERE imdbId = :imdbId")
     override suspend fun rating(imdbId: String): CachedRating?
     @Upsert override suspend fun putRating(rating: CachedRating)
+
+    @Query("DELETE FROM title_mappings WHERE status = 'ERROR' AND (matchConfidence IS NULL OR matchConfidence != 'manual')")
+    suspend fun clearProviderMappingFailures()
+    @Query("UPDATE ratings SET failures = 0, retryAfter = 0 WHERE failures > 0")
+    suspend fun clearProviderRatingFailures()
+
+    @Transaction suspend fun resetProviderFailures() {
+        clearProviderMappingFailures()
+        clearProviderRatingFailures()
+    }
 }
 
 @Database(entities = [TitleMapping::class, CachedRating::class], version = 3, exportSchema = true)

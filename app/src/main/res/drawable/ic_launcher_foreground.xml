@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Creative Moods, Lda.
+     SPDX-License-Identifier: Apache-2.0 -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android" android:inset="18dp"><bitmap android:src="@drawable/scorepuff_mascot" android:filter="true" android:gravity="fill" /></inset>

@@ -1,21 +1,12 @@
 // Copyright 2026 Creative Moods, Lda.
 // SPDX-License-Identifier: Apache-2.0
 
-import java.util.Properties
-
 plugins {
     id("com.google.devtools.ksp")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
-
-val omdbSettings = Properties().apply {
-    val file = rootProject.file("omdb.properties")
-    if (file.exists()) file.inputStream().use { load(it) }
-}
-val omdbKey = omdbSettings.getProperty("omdb.apiKey", "").trim()
-require(omdbKey.matches(Regex("[A-Za-z0-9]*"))) { "OMDb key must contain only letters and digits" }
 
 ksp { arg("room.schemaLocation", "$projectDir/schemas") }
 
@@ -26,12 +17,8 @@ android {
         applicationId = "pt.creativemoods.scorepuff"
         minSdk = 29
         targetSdk = 35
-        versionCode = 15
-        versionName = "0.2.13"
-        buildConfigField("String", "OMDB_API_KEY", "\"\"")
-    }
-    buildTypes {
-        getByName("debug") { buildConfigField("String", "OMDB_API_KEY", "\"$omdbKey\"") }
+        versionCode = 17
+        versionName = "0.2.15"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
