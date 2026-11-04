@@ -19,6 +19,7 @@ secrets.properties
 !.env.sample
 
 # Signing keys and service credentials
+/signing/
 *.jks
 *.keystore
 *.p12
@@ -72,3 +73,7 @@ Thumbs.db
 /ui-dump*.xml
 
 # Keep the Gradle wrapper JAR, Room schema JSON and sanitized test fixtures.
+
+# Python release tooling
+__pycache__/
+*.py[cod]

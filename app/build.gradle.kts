@@ -1,6 +1,8 @@
 // Copyright 2026 Creative Moods, Lda.
 // SPDX-License-Identifier: Apache-2.0
 
+import java.util.Properties
+
 plugins {
     id("com.google.devtools.ksp")
     id("com.android.application")
@@ -9,6 +11,18 @@ plugins {
 }
 
 ksp { arg("room.schemaLocation", "$projectDir/schemas") }
+
+// Signing credentials stay in an ignored, machine-local file.
+val releaseCredentialsFile = rootProject.file("keystore.properties")
+val useReleaseSigning = releaseCredentialsFile.isFile && !providers.gradleProperty("unsignedRelease").isPresent
+val releaseCredentials = Properties().apply {
+    if (useReleaseSigning) releaseCredentialsFile.inputStream().use { load(it) }
+}
+if (useReleaseSigning) {
+    require(listOf("storeFile", "storePassword", "keyAlias", "keyPassword").all {
+        !releaseCredentials.getProperty(it).isNullOrBlank()
+    }) { "Complete the local keystore.properties signing configuration." }
+}
 
 android {
     namespace = "pt.creativemoods.scorepuff"
@@ -19,6 +33,21 @@ android {
         targetSdk = 35
         versionCode = 17
         versionName = "0.2.15"
+    }
+    signingConfigs {
+        if (useReleaseSigning) {
+            create("release") {
+                storeFile = rootProject.file(releaseCredentials.getProperty("storeFile"))
+                storePassword = releaseCredentials.getProperty("storePassword")
+                keyAlias = releaseCredentials.getProperty("keyAlias")
+                keyPassword = releaseCredentials.getProperty("keyPassword")
+            }
+        }
+    }
+    buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.findByName("release")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

@@ -73,7 +73,7 @@ Commit the Android source and resources, unit tests and sanitized fixtures, expo
 
 Keep API/signing credentials, SDK/JDK downloads, caches, generated packages, logs, database copies, raw UI dumps and personal notes local. `.gitignore` covers these, including legacy OMDb properties files. Browse/watch-list fixtures use synthetic titles, catalog IDs and progress. Focused matching regression cases use public film/catalog metadata, not account identifiers.
 
-Before committing, review `git status --short`, `git add --dry-run .` and your staged diff. Ignore rules do not remove files already tracked or secrets in existing history. See [publishing checks](docs/publishing.md).
+Before committing, review `git status --short`, `git add --dry-run .` and your staged diff. Ignore rules do not remove files already tracked or secrets in existing history. See [publishing checks and automated APK releases](docs/publishing.md).
 
 Changing the Android package creates a separate application sandbox; it does not automatically transfer an older installation's data or accessibility authorization.
 
