@@ -81,13 +81,13 @@ Pushing the tag is the publication action. The workflow does not increment versi
 
 Release assets:
 
-- `app-release.apk` — signed installable app, retaining the current APK filename.
-- `app-release.apk.sha256` — download integrity checksum.
+- `scorepuff.apk` — signed installable download; Gradle’s local output remains `app-release.apk`.
+- `scorepuff.apk.sha256` — download integrity checksum.
 - `release.json` — public version, commit, checksum and certificate metadata.
 
 The stable download URL for the project website is:
 
-`https://github.com/creativemoods/scorepuff/releases/latest/download/app-release.apk`
+`https://github.com/creativemoods/scorepuff/releases/latest/download/scorepuff.apk`
 
 This system does not push commits/tags, upload secrets, or start a release merely by being added locally. Its first hosted run must be verified in GitHub after the environment is configured and the workflow is committed. Local validation covers workflow syntax and the same build/sign/verify tools, but cannot exercise GitHub permissions or environment policies.
 

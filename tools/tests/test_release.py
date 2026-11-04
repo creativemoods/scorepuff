@@ -37,7 +37,7 @@ class ReleaseVerificationTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.apk = self.root / "app-release.apk"
+        self.apk = self.root / "scorepuff.apk"
         self.cert = self.root / "certificate.sha256"
         self.cert.write_text("a" * 64)
         self.info = release.metadata(ReleaseIdentityTest.source, "v0.2.15", "a" * 40)

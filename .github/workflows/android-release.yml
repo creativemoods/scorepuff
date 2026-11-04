@@ -96,8 +96,8 @@ jobs:
         with:
           name: signed-release
           path: |
-            artifacts/signed/app-release.apk
-            artifacts/signed/app-release.apk.sha256
+            artifacts/signed/scorepuff.apk
+            artifacts/signed/scorepuff.apk.sha256
             artifacts/signed/release.json
           if-no-files-found: error
           retention-days: 7
@@ -121,12 +121,12 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
           RELEASE_COMMIT: ${{ needs.build.outputs.commit }}
         run: |
-          sha256sum --check app-release.apk.sha256
+          sha256sum --check scorepuff.apk.sha256
           actual_commit=$(gh api "repos/$GH_REPO/commits/$RELEASE_TAG" --jq .sha)
           test "$actual_commit" = "$RELEASE_COMMIT"
           # Upload all assets to a temporary draft, then publish together without review.
           # Existing releases are never overwritten; a failed draft is removed manually before retrying.
           gh release create "$RELEASE_TAG" --verify-tag --draft \
             --title "ScorePuff ${RELEASE_TAG#v}" --generate-notes \
-            app-release.apk app-release.apk.sha256 release.json
+            scorepuff.apk scorepuff.apk.sha256 release.json
           gh release edit "$RELEASE_TAG" --draft=false --latest

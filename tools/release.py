@@ -15,7 +15,7 @@ import tempfile
 import zipfile
 
 PACKAGE = "pt.creativemoods.scorepuff"
-APK_NAME = "app-release.apk"
+APK_NAME = "scorepuff.apk"
 
 
 def version(source):
