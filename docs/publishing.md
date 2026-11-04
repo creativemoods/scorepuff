@@ -92,3 +92,11 @@ The stable download URL for the project website is:
 This system does not push commits/tags, upload secrets, or start a release merely by being added locally. Its first hosted run must be verified in GitHub after the environment is configured and the workflow is committed. Local validation covers workflow syntax and the same build/sign/verify tools, but cannot exercise GitHub permissions or environment policies.
 
 References: [GitHub workflow security guidance](https://docs.github.com/en/actions/reference/security/secure-use), [GitHub CLI release creation](https://cli.github.com/manual/gh_release_create).
+
+## In-app update checks
+
+The app reads GitHub’s latest stable release plus its version-specific `release.json`. Keep publishing **all three assets together** with the existing names. The app checks the package, tag/version, Android versionCode, published size/digest and pinned certificate metadata before offering the download. A larger versionCode triggers the prompt; a display-name change alone does not.
+
+The update button opens that release’s exact `scorepuff.apk` browser URL, rather than the moving latest-download URL. The app does not download or install APKs in the background, and it requests no package-install or storage permission. The browser downloads the file; the user opens it and Android confirms installation and validates compatibility/signing. Published metadata is checked before offering an update; APK-byte and certificate verification on the downloaded file is performed by Android, not by the update-check client.
+
+Startup performs one asynchronous check per settings Activity ViewModel lifetime. Rotation and returning from the browser do not repeat it. Dismissing the prompt leaves the download available in settings; a later app startup can prompt again. A settings button retries failed or previous checks. Missing releases, offline access, rate limits and malformed metadata never block normal app use. Debug builds check availability but link to the release page instead of offering to install an incompatible release over a debug certificate.

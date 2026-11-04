@@ -31,8 +31,11 @@ android {
         applicationId = "pt.creativemoods.scorepuff"
         minSdk = 29
         targetSdk = 35
-        versionCode = 19
-        versionName = "0.2.17"
+        versionCode = 20
+        versionName = "0.2.18"
+        val releaseCertificate = rootProject.file(".github/release-certificate.sha256").readText().trim()
+        require(releaseCertificate.matches(Regex("[0-9a-f]{64}")))
+        buildConfigField("String", "RELEASE_CERTIFICATE_SHA256", "\"$releaseCertificate\"")
     }
     signingConfigs {
         if (useReleaseSigning) {

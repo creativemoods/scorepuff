@@ -46,11 +46,21 @@ Sharing is optional: dated details-page matches are saved automatically. Share s
 
 A unique title/year/type may have different catalog durations. The Share preview discloses this for confirmation and omits the differing runtime from saved identity evidence. Duration remains strict when needed to disambiguate namesakes.
 
+## App updates
+
+Installations that predate the updater need one manual APK update first.
+
+On startup, ScorePuff checks the latest stable GitHub release and compares its Android `versionCode` with the installed app. A newer signed release prompts **Download update** or **Later**. The download opens the exact version’s `scorepuff.apk` in your browser; open the downloaded APK and confirm installation in Android. Nothing downloads automatically. Updates preserve local settings and associations when installed over a release signed with the same key.
+
+Use **App updates → Check for updates** in settings to retry manually. Offline or unavailable GitHub checks do not block the app. Development builds show available releases in settings but do not offer an incompatible in-place installation.
+
 ## Local data and privacy
 
 The API key is stored in app-private preferences, encrypted with an Android Keystore key. The entry field is masked and never displays the saved key. Removing it pauses provider lookups while keeping cached data and associations.
 
 Mappings, scores, negative results and retry state stay in Room on the device. There is no central mapping database or upload of associations. Scores normally refresh after 24 hours; automatic positive mappings after 30 days. Manual choices retain priority until removed.
+
+Update checks contact GitHub for public release information and metadata; they send no OMDb key, streaming titles or saved associations. The browser handles APK downloads, and Android checks the update’s package/signature during installation.
 
 Only recognized title strings, available type/year, resolved IMDb IDs and the API key go to OMDb over HTTPS. Netflix/Prime IDs, screen coordinates and accessibility trees are not sent. Backups are disabled. The app requests no video/audio capture, storage or `SYSTEM_ALERT_WINDOW` permission. The accessibility overlay is non-touchable and hides on other apps, lock screens, foreign focused windows and landscape/playback guards.
 

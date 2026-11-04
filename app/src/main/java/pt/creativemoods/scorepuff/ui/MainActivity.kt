@@ -29,6 +29,7 @@ import pt.creativemoods.scorepuff.data.DiagnosticsRepository
 
 class MainActivity : ComponentActivity() {
     private val model: MainViewModel by viewModels()
+    private val updates: pt.creativemoods.scorepuff.updates.UpdateViewModel by viewModels()
     override fun onResume() { super.onResume(); model.refreshEnabled() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val diagnostics by model.diagnostics.collectAsStateWithLifecycle()
             val enabled by model.enabled.collectAsStateWithLifecycle()
+            val sharedMatch by model.sharedMatch.collectAsStateWithLifecycle()
             val omdbKeyState by model.omdbKeyState.collectAsStateWithLifecycle()
             ScorePuffTheme {
                 SharedMatchDialog(model)
@@ -122,6 +124,10 @@ class MainActivity : ComponentActivity() {
                     Text("Recent errors", color = MaterialTheme.colorScheme.primary)
                     Text(diagnostics.errors.joinToString("\n").ifEmpty { "None in this process" },
                         color = MaterialTheme.colorScheme.onBackground)
+                    UpdateSettings(updates, sharing = sharedMatch.visible) { url ->
+                        try { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url))) }
+                        catch (_: ActivityNotFoundException) { updates.openFailed() }
+                    }
                     Text("ScorePuff · Version ${pt.creativemoods.scorepuff.BuildConfig.VERSION_NAME}",
                         style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                     Text("Ratings supplied by OMDb (omdbapi.com), CC BY-NC 4.0. Not affiliated with Netflix, Amazon, IMDb, or Rotten Tomatoes.",
